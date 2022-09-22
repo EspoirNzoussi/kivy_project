@@ -1,0 +1,32 @@
+<Mygame>:
+    mon_label: mon_label
+    entrer_reponse: entrer_reponse
+    BoxLayout :
+        orientation : "vertical"
+        Image:
+            source: "img.jpg"
+            allow_stretch: True
+            keep_ratio : True
+            size_hint: None, None
+            width: self.parent.width
+            height: self.parent.width/self.image_ratio
+        BoxLayout:
+            orientation : "vertical"
+            padding: 100,30,100,30,
+        Label:
+            id: mon_label
+            text: "Trouvez le nombre"
+            font_size: 30
+        TextInput:
+            id: entrer_reponse
+            padding: 20, 20, 20, 20
+            size_hint: 1, 0.5
+            font_size: 20
+            input_type: "number"
+            multiline: False
+        Button:
+            text: "Vérifier"
+            size_hint: 1, 0.5
+            bold: True
+            background_color:"#13BC20"
+            on_press: root.verification()
